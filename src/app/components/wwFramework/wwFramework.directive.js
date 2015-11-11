@@ -9,7 +9,7 @@
   /** @ngInject */
   function wwFramework() {
     var directive = {
-      transclude: false,
+      transclude: true,
       scope: {
         //Bind a string onetime - use @
         //snake case in the html for iconFile -> icon-file

@@ -1,0 +1,47 @@
+
+.wwMenu-wrapper {
+  position: relative;
+  background-color: #333;
+  color: #ccc;
+  padding-left: 0;
+  width: 200px;
+  min-height: 100vh;
+  padding-top: 30px;
+}
+
+.wwMenu-wrapper .btn:hover {
+  color: #ccc;
+}
+
+.wwMenu-wrapper {
+  list-style-type: none;
+  vertical-align: top;
+  ul {
+    display: inline;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+    line-height: 3em;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+  .wwlist-item{
+    display: inline-block;
+    width:90%;
+    padding-left:16px;
+  }
+  i{
+    margin-right:10px;
+  }
+}
+
+
