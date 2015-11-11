@@ -1,0 +1,3 @@
+@if variable-exists(font-url--openSans){
+  @import url($font-url--openSans);
+}

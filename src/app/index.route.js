@@ -11,7 +11,7 @@
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainController',
+        controller: 'wwFrameworkCtrl',
         controllerAs: 'main'
       });
 

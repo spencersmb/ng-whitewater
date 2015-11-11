@@ -3,10 +3,10 @@
 
   angular
     .module('ngWhitewater')
-    .controller('MainController', MainController);
+    .controller('wwFrameworkCtrl', wwFrameworkCtrl);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function wwFrameworkCtrl($timeout, webDevTec, toastr) {
     var vm = this;
 
     vm.awesomeThings = [];

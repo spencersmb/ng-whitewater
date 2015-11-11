@@ -1,0 +1,24 @@
+//BREAKPOINTS
+@mixin breakpoint($point) {
+  @if $point == desktopXL {
+    @media only screen and (min-width: 1600px) { @content ; }
+  }
+  @else if $point == desktop {
+    @media only screen and (min-width: 1200px) { @content ; }
+  }
+  @else if $point == laptop {
+    @media only screen and (min-width: 992px) { @content ; }
+  }
+  @else if $point == tablet {
+    @media only screen and (min-width: 768px) { @content ; }
+  }
+  @else if $point == mobile {
+    @media (max-width: 480px)  { @content ; }
+
+  }
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

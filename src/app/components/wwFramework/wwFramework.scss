@@ -1,0 +1,56 @@
+.ww-title-bar {
+  background-color: white;
+  padding: 0 20px;
+  border-bottom: 2px solid black;
+}
+
+.ww-logo-area {
+  text-align: center;
+}
+
+.ww-title-wrapper {
+  display: inline-block;
+}
+
+.ww-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  vertical-align: top;
+  border: 1px solid #999;
+}
+
+.ww-logo-title {
+  color: #111;
+  margin-top: 6px;
+  font-size: 22px;
+}
+
+.ww-logo-subtitle {
+  font-size: 13px;
+  margin-top: -13px;
+}
+
+.ww-right-ctrls {
+  line-height: 60px;
+}
+
+.ww-right-ctrls > div {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .ww-right-ctrls > div {
+    text-align: right;
+  }
+  .ww-title-wrapper {
+    text-align: left;
+  }
+  .ww-logo-area {
+    text-align: left;
+  }
+
+}
+
+
