@@ -5,7 +5,7 @@
 }
 
 .ww-logo-area {
-  text-align: center;
+//  text-align: center;
 }
 
 .ww-title-wrapper {
@@ -19,12 +19,20 @@
   margin: 8px;
   vertical-align: top;
   border: 1px solid #999;
+
+  @include breakpoint(mobile){
+    display:none;
+  }
 }
 
 .ww-logo-title {
   color: #111;
   margin-top: 6px;
   font-size: 22px;
+
+  @include breakpoint(mobile){
+    font-size: 18px;
+  }
 }
 
 .ww-logo-subtitle {

@@ -6,6 +6,12 @@
         <p class="ww-logo-title">{{ title }}</p>
         <p class="ww-logo-subtitle">{{ subtitle }}</p>
       </div>
+
+      <div class="wwMenu-collapsed pull-right" ng-if="isMenuButtonVisible" ng-click="menuButtonClicked()">
+        <button class="btn wwMenu-nav-btn">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
     </div>
     <div class="ww-right-ctrls col-sm-6">
       <div>
@@ -16,6 +22,7 @@
     </div>
   </div>
 </div>
+
 <!-- allow for transclusion -->
 <div ng-transclude></div>
 
