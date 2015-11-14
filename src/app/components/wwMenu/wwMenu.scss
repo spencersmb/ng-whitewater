@@ -42,6 +42,28 @@
   & > i{
     margin-right:10px;
   }
+  .has-children{
+    display: block;
+    padding-left: 16px;
+  }
+  .ww-group-arrow-left{
+    float:right;
+    color:#ddd;
+    margin-right: 15px;
+    margin-top:15px;
+  }
+  .wwGroup-item{
+    &:hover{
+      background: #333;
+    }
+  }
+  .wwlist-group{
+    width:100%;
+    &:hover{
+      background: #555;
+      width:100%;
+    }
+  }
 }
 
 .wwMenu-active-item{
@@ -65,5 +87,11 @@
   font-size: 26px;
   color:#777;
 }
-
+.wwMenu-horizontal-toggle{
+  margin:12px;
+  padding:2px 8px;
+  color:#bbb;
+  background-color: #333333;
+  border:1px solid #999;
+}
 

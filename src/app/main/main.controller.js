@@ -6,8 +6,11 @@
     .controller('wwFrameworkCtrl', wwFrameworkCtrl);
 
   /** @ngInject */
-  function wwFrameworkCtrl($scope, $window, $rootScope) {
+  function wwFrameworkCtrl($scope, $window, $rootScope, $timeout) {
     var vm = this;
+
+    $scope.isMenuVertical = true;
+
 
     //listen for the route message coming - this one happens to come from the wwMenu controller
     $scope.$on('ww-menu-item-selected-event', function (evt, data) {
@@ -25,7 +28,7 @@
     $($window).on('resize.ngWhitewater', function(){
       $scope.$apply(function(){
         //do check width to reset variables
-        //then call the menuState to check if menu should be on or not
+        //then call the menuState to check if menu should be on or not, then broadcast that change
         checkWidth();
         broadcastMenuState();
       });
@@ -44,10 +47,12 @@
 
       //Show main menu on desktop screens
       $scope.isMenuVisible = ( width >= 768);
-      $scope.isMenuButtonVisible = !$scope.isMenuVisible;
 
+      //show button = oppisite of what isMenu is - so if its showing the button is hidden, and if hidden button is showing
+      $scope.isMenuButtonVisible = !$scope.isMenuVisible;
     };
 
+    //on menu btn click - toggle is Open - and then broadcast its state to the ctrler
     $scope.menuButtonClicked = function (){
 
       //open and close for menu showing the opposite of whatever it is
@@ -67,12 +72,19 @@
       });
     };
 
+    //listen for event on the nav for menu orientation change
+    $scope.$on('ww-menu-orientation-changed-event', function (evt, data) {
+
+      $scope.isMenuVertical = data.isMenuVertical;
+
+    });
+
     //call when page first loads
-    checkWidth();
-    //Simple timeout function to call as soon as page loads
-    //$timeout(function () {
-    //  checkWidth();
-    //},0);
+    //Simple timeout function to call as soon as page loads - works cus it calls the $apply
+    $timeout(function () {
+      checkWidth();
+      broadcastMenuState();
+    },0);
 
     //inject $timeout, webDevTec, toastr
     //vm.awesomeThings = [];

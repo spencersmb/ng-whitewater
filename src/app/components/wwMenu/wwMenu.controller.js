@@ -9,7 +9,6 @@
   function wwMenuCtrl($scope, $rootScope){
     var vm = this;
 
-    //$scope.showMenu = true;
 
     //keep track of which menu item is the active item
     vm.setActiveElement = function (el) {
@@ -30,12 +29,23 @@
       );
     };
 
-    //listen for the menu broadcast
+    //listen for the menu broadcast from the main ctrl
     $scope.$on('wwMenu-show', function (evt, data) {
       //real routing happens here
       //temp store string in variable
       $scope.showMenu = data.show;
 
     });
+
+    $scope.isVertical = true;
+
+    $scope.toggleMenuHorizontal = function () {
+      $scope.isVertical = !$scope.isVertical;
+
+      //must let main framework know the orientation has changed
+      $rootScope.$broadcast('ww-menu-orientation-changed-event',
+        {isMenuVertical: $scope.isVertical}
+      );
+    };
   }
 })();
