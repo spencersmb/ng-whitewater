@@ -9,4 +9,4 @@
   </li>
   <!-- show if variable is true -->
   <!-- recursion will work because the div is not in the ul -->
-  <div class="has-children" ng-show="isOpen" ng-transclude></div>
+  <div class="has-children" ng-show="isOpen" ng-class="{'active': isOpen}" ng-transclude></div>

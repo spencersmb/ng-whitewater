@@ -11,7 +11,6 @@
 
     $scope.isMenuVertical = true;
 
-
     //listen for the route message coming - this one happens to come from the wwMenu controller
     $scope.$on('ww-menu-item-selected-event', function (evt, data) {
       //real routing happens here
@@ -74,9 +73,7 @@
 
     //listen for event on the nav for menu orientation change
     $scope.$on('ww-menu-orientation-changed-event', function (evt, data) {
-
       $scope.isMenuVertical = data.isMenuVertical;
-
     });
 
     //call when page first loads

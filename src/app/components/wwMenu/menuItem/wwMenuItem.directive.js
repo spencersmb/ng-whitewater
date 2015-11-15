@@ -26,11 +26,25 @@
           return el === ctrl.getActiveElement();
         };
 
+        //another item to keep track of on the item scope - that pulls from the menu ctrler.
+        scope.isVertical = function () {
+          console.log(ctrl.isVertical);
+
+          return ctrl.isVertical;
+        };
+
         //take element and use click event
         el.on('click', function (evt) {
           evt.stopPropagation();
           evt.preventDefault();
 
+          console.log(ctrl.isVertical());
+
+          if(ctrl.checkSubMenu && ctrl.isVertical() != true){
+            console.log('open');
+            ctrl.checkSubMenu().closeMenu();
+          }
+          console.log();
           //pass in data from this controller to the parent controller and apply it on click
           scope.$apply(function () {
             //these functions are created in the wwMenuCtrl

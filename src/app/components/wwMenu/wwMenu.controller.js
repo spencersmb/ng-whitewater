@@ -29,6 +29,20 @@
       );
     };
 
+    vm.isVertical = function () {
+      return $scope.isVertical;
+    };
+
+    //If horizontal menu btn is clicked openMenu gets set
+    vm.setOpenMenu = function (scope) {
+      $scope.openMenu = scope;
+      $scope.subMenuOpen = true;
+    };
+
+    vm.checkSubMenu = function(){
+      return $scope.openMenu;
+    };
+
     //listen for the menu broadcast from the main ctrl
     $scope.$on('wwMenu-show', function (evt, data) {
       //real routing happens here
@@ -39,7 +53,12 @@
 
     $scope.isVertical = true;
 
+    //Horizontal btn
     $scope.toggleMenuHorizontal = function () {
+      //check if a submenu is open - close it using the child-directive scope function
+      if($scope.openMenu){
+        $scope.openMenu.closeMenu();
+      }
       $scope.isVertical = !$scope.isVertical;
 
       //must let main framework know the orientation has changed
@@ -47,5 +66,22 @@
         {isMenuVertical: $scope.isVertical}
       );
     };
+
+    //on document bind a click function to close menu if its horizontal
+    angular.element(document).bind('click', function (e) {
+      //***Note that if you use jquery - you will need to call $apply to make sure the changes get propigated
+      //if menu is open and menu is vertical close
+      if($scope.openMenu && !$scope.isVertical){
+
+        if($(e.target).parent().next().hasClass('active-add')){
+          //do nothing
+        }else{
+          $scope.$apply(function () {
+            $scope.openMenu.closeMenu();
+          });
+        }
+
+      }
+    });
   }
 })();
