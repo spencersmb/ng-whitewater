@@ -9,8 +9,9 @@
   function wwMenuCtrl($scope, $rootScope){
     var vm = this;
 
-
     //keep track of which menu item is the active item
+    //Set active item on click for the getActiveelement to retrieve it
+    //This is so the directive can communicate back and fourth with the controller and the view state basically
     vm.setActiveElement = function (el) {
       $scope.activeElement = el;
     };
@@ -83,5 +84,6 @@
 
       }
     });
+
   }
 })();
