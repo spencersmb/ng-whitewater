@@ -17,7 +17,7 @@
       })
       .state('home.dashboard', {
         url: 'dashboard',
-        templateUrl: 'app/components/wwDashboard/wwDashboard-tmpl.html'
+        templateUrl: 'app/components/wwDashboard/view/wwaDashboard-view-tmpl.html'
       })
       .state('home.locations', {
         url: 'locations',

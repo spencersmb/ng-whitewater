@@ -4,6 +4,7 @@
   angular
     .module('ngWhitewater', [
       'ngAnimate',
+      'gridster',
       'ngCookies',
       'ngTouch',
       'ngSanitize',
