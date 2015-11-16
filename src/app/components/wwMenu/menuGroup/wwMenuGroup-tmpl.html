@@ -9,4 +9,8 @@
   </li>
   <!-- show if variable is true -->
   <!-- recursion will work because the div is not in the ul -->
-  <div class="has-children" ng-show="isOpen" ng-class="{'active': isOpen}" ng-transclude></div>
+  <!-- Animation will know about the ng-Show on this element and pick up on it, so we just need to add the correct classes -->
+  <!-- So the class ww-fade-in-animation will get added and removed when ng-show is true or false -->
+  <div class="has-children ww-fade-in-animation" ng-show="isOpen" ng-class="{'active': isOpen}">
+    <ul ng-transclude></ul>
+  </div>

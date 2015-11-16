@@ -24,8 +24,9 @@
 </div>
 
 <!-- allow for transclusion -->
-<div ng-transclude></div>
+<ng-transclude></ng-transclude>
 
-<div style="position: absolute; left:200px; top:200px; color:red; font-size: 44px;">
-  {{routeString}}
+<!-- Super handy to have the vaibales available to us on scope here -->
+<div ui-view class="main-content" ng-class="{'menu-full-width': !isMenuVertical || !isMenuVisible }">
+
 </div>

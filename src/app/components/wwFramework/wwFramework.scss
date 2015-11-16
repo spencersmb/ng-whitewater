@@ -48,6 +48,13 @@
   text-align: center;
 }
 
+.main-content{
+  padding:20px;
+  background-color: #ccc;
+  min-height: 100vh;
+  overflow: auto;
+}
+
 @media screen and (min-width: 768px) {
   .ww-right-ctrls > div {
     text-align: right;

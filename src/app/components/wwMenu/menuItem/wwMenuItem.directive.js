@@ -38,17 +38,15 @@
           evt.stopPropagation();
           evt.preventDefault();
 
-          console.log(ctrl.isVertical());
-
-          if(ctrl.checkSubMenu && ctrl.isVertical() != true){
-            console.log('open');
+          if(ctrl.checkSubMenu && ctrl.isVertical() !== true){
             ctrl.checkSubMenu().closeMenu();
           }
-          console.log();
           //pass in data from this controller to the parent controller and apply it on click
           scope.$apply(function () {
             //these functions are created in the wwMenuCtrl
             ctrl.setActiveElement(el);
+
+            //we must set the route on click and it must be broadcast from the controller
             ctrl.setRoute(scope.route);
           });
         });

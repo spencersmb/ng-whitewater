@@ -6,7 +6,7 @@
     .controller('wwFrameworkCtrl', wwFrameworkCtrl);
 
   /** @ngInject */
-  function wwFrameworkCtrl($scope, $window, $rootScope, $timeout) {
+  function wwFrameworkCtrl($scope, $window, $rootScope, $timeout, $location) {
     var vm = this;
 
     $scope.isMenuVertical = true;
@@ -14,8 +14,9 @@
     //listen for the route message coming - this one happens to come from the wwMenu controller
     $scope.$on('ww-menu-item-selected-event', function (evt, data) {
       //real routing happens here
-      //temp store string in variable
-      $scope.routeString = data.route;
+
+      //change the location path and insert route - ui-route will listen to the url and change states
+      $location.path(data.route);
 
       //hide menu on url route click for mobile
       checkWidth();
