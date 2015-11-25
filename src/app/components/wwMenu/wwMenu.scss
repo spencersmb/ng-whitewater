@@ -59,7 +59,7 @@
   }
   &.vertical{
     width: 200px;
-    min-height: 100vh;
+    min-height: calc(100vh - 68px);
     padding-top: 30px;
     float:left;
   }

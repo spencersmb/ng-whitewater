@@ -36,7 +36,9 @@
               //add directive link here on the object - this is what holds the data
               template: '<wwa-temp></wwa-temp>',
               widgetSettings:{
-                id: 1000
+                id: 1000,
+                templateUrl: 'app/dialog/wwaSelectLocation-tmpl.html',
+                controller:'wwaSelectLocationCtrl'
               }
             }
           },
@@ -48,7 +50,9 @@
               //add directive link here on the object - this is what holds the data
               template: '<wwa-emp></wwa-emp>',
               widgetSettings:{
-                id: 5001
+                id: 5001,
+                templateUrl: 'app/dialog/wwaSelectEmployee-tmpl.html',
+                controller:'wwaSelectEmployeeCtrl'
               }
             }
           },
@@ -59,45 +63,16 @@
               sizeY: 1,
               template: '<wwa-inv></wwa-inv>',
               widgetSettings:{
-                id: 1002
+                id: 1002,
+                templateUrl: 'app/dialog/wwaSelectLocation-tmpl.html',
+                controller:'wwaSelectLocationCtrl'
               }
             }
           }
         ];
         //this is the content for each widget
         scope.widgets = [
-          {
-            sizeX:4,
-            sizeY: 2,
-            row: 0,
-            col:0,
-            //add directive link here on the object - this is what holds the data
-            template: '<wwa-temp></wwa-temp>',
-            widgetSettings:{
-              id: 1000
-            }
-          },
-          {
-            sizeX:2,
-            sizeY: 2,
-            row: 0,
-            col:6,
-            template: '<wwa-emp></wwa-emp>',
-            widgetSettings:{
-              id: 5001
-            }
-          },
-          {
-            sizeX:3,
-            sizeY: 1,
-            row: 2,
-            col:0,
-            //add directive link here on the object - this is what holds the data
-            template: '<wwa-inv></wwa-inv>',
-            widgetSettings:{
-              id: 1002
-            }
-          }
+
         ];
         scope.title = 'My Dashboard';
 

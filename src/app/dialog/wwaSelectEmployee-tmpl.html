@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h3 class="modal-title">Select Employee</h3>
+</div>
+<div class="modal-body">
+  <h3>Name</h3>
+  <!-- ng-options has the data stored in employees and we loop through it setting each item to employee and looking for the name on each item. ng-modal is two way -->
+  <!-- the select dialog box automatically sets the name as the selectedLocation ng-model -->
+  <select ng-show="isLoaded"
+          ng-model="selectedEmployee"
+          ng-options="employee.name for employee in employees"></select>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" ng-click="saveSettings()">Ok</button>
+  <button type="button" class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+</div>

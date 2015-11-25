@@ -5,7 +5,7 @@
     .directive('wwWidgetBody', wwWidgetBody);
 
   /** @ngInject */
-  function wwWidgetBody($compile) {
+  function wwWidgetBody($compile, $modal) {
     //add compile to get all the widget contents in the link function
     var directive = {
       //this directive will inherit scope from parent directive instead of using isolate scope
@@ -33,6 +33,24 @@
           //splice the indexOf the current item clicked
           scope.widgets.splice(scope.widgets.indexOf(scope.item), 1);
         };
+
+        scope.settings = function () {
+          var options = {
+            //dynamically set options based on where user clicks
+            //each widget will have its won template for the dialogue potentially so we keep track of it on this key/value
+            templateUrl: scope.item.widgetSettings.templateUrl,
+            //the modal service also needs a controller which we will store in the same place
+            controller: scope.item.widgetSettings.controller,
+            //set scope
+            scope: scope
+          };
+          //pass the modal the option on opening
+          $modal.open(options);
+        };
+
+        scope.saveSettings = function(){
+
+        }
       }
     };
 
