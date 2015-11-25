@@ -1,6 +1,5 @@
 wwa-dashboard{
   position: relative;
-  height:165px;
   width: 100%;
   display: block;
 }
@@ -13,4 +12,49 @@ ww-dashboard{
     box-shadow: 0 0 5px rgba(0,0,0, 0.3);
     background:#fff;
   }
+}
+
+.ww-header-title{
+  padding:20px;
+  margin:0;
+  background: #808080;
+  color:#fff;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.ww-widget-header {
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  min-height: 32px;
+  padding:4px 8px 2px;
+
+  &-btns{
+    position: absolute;
+    top:0;
+    right:0;
+  }
+
+  .btn{
+    margin:4px;
+    padding:1px 12px;
+  }
+
+  span{
+    text-transform: uppercase;
+    font-size: 14px;
+
+  }
+}
+
+.ww-widget-body{
+  min-height: 100px;
+}
+
+.ps-dashboard-controls {
+  position: absolute;
+  top:15px;
+  right:15px;
+  float: right;
 }

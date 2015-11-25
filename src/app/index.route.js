@@ -12,8 +12,9 @@
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'wwFrameworkCtrl',
-        controllerAs: 'main'
+        //runs ctrl twice if enabled
+        //controller: 'wwFrameworkCtrl',
+        //controllerAs: 'main'
       })
       .state('home.dashboard', {
         url: 'dashboard',

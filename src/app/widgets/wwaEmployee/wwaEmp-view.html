@@ -1,0 +1,28 @@
+
+<div class="wwa-employee-widget">
+  <div class="ww-widget-header wwa-employee-heading">
+    <img class="wwa-employee-icon" ng-src="assets/images/employee.png" alt="employee" />
+    <span class="www-employee-title">Employee</span>
+    <div class="ww-widget-header-btns">
+      <button class="btn btn-default pull-right" ng-click="close()">
+        <i class="fa fa-remove"></i>
+      </button>
+      <button class="btn btn-default pull-right" ng-click="settings()">
+        <i class="fa fa-gear"></i>
+      </button>
+    </div>
+  </div>
+  <div class="ww-widget-body wwa-employee-body">
+    <div class="wwa-employee-row">
+      <div class="wwa-employee-name-area">
+        <h4>EMPLOYEE NAME</h4>
+        <p>{{selectedEmployee.name}}</p>
+        <h4>LOCAL RIVER</h4>
+        <p>{{selectedEmployee.location}}</p>
+      </div>
+      <div class="wwa-employee-picture-area" style="background-image: url(/assets/images/{{selectedEmployee.image}});">
+      </div>
+    </div>
+  </div>
+
+</div>

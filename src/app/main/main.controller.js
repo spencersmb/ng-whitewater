@@ -7,7 +7,6 @@
 
   /** @ngInject */
   function wwFrameworkCtrl($scope, $window, $rootScope, $timeout, $location) {
-    var vm = this;
 
     $scope.isMenuVertical = true;
 
@@ -36,12 +35,11 @@
 
     $scope.$on("$destroy", function () {
       //this somehow is called when check width is false or something not sure
-      console.log('off called');
+      //console.log('off called');
       $($window).off("resize.ngWhitewater");
     });
 
     var checkWidth = function(){
-
       //checks for scroll bar and returns the largest number
       var width = Math.max($($window).width(), $window.innerWidth);
 

@@ -15,7 +15,7 @@
       },
       controller: 'wwMenuCtrl',
       templateUrl: 'app/components/wwMenu/wwMenu-tmpl.html',
-      link: function(scope, el, attr){
+      link: function(){
 
       }
     };

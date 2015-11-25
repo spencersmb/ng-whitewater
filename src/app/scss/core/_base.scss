@@ -1,6 +1,7 @@
 body{
   background: #444;
   font-family: $openSans;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
 
 .no-padding{

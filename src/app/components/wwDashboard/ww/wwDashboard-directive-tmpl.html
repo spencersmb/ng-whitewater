@@ -1,8 +1,30 @@
-<div gridster>
+<h2 class="ww-header-title">{{title}}</h2>
+
+<div class="ps-dashboard-controls">
+
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+      <i class="fa fa-plus"></i>
+      Add Widget
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <li ng-repeat="widget in widgetDefinitions">
+        <!-- this click function gets added on in the wwDashboard directive to call on scope -->
+        <a role="menuitem" ng-click="addNewWidget(widget)">{{widget.title}}</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div gridster="gridsterOpts">
   <ul>
     <!-- this looks at the parent directive because the scope is not isolate to get the array -->
     <li gridster-item="item" ng-repeat="item in widgets">
-      <div>widget item</div>
+
+      <!-- keep widget contents out of the dashboard directive - its found inside the widget template -->
+      <ww-widget-body></ww-widget-body>
     </li>
   </ul>
 </div>

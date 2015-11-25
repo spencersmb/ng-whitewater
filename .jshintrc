@@ -13,6 +13,9 @@
     "angular": false,
     "inject": false,
     "module": false,
-    "alert":false
+    "alert":false,
+    "$":false,
+    "document":false
+
   }
 }
