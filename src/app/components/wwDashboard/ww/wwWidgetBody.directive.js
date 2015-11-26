@@ -34,6 +34,8 @@
           scope.widgets.splice(scope.widgets.indexOf(scope.item), 1);
         };
 
+        //open settings is set on the widget body here as well as close , but the settings that actually change the content of the widget is set on the directive for the bootstrap modal called on the widget.
+        //here we open the modal but pass in the settings for the current item to then be used by the modal directive
         scope.settings = function () {
           var options = {
             //dynamically set options based on where user clicks
@@ -47,10 +49,6 @@
           //pass the modal the option on opening
           $modal.open(options);
         };
-
-        scope.saveSettings = function(){
-
-        }
       }
     };
 

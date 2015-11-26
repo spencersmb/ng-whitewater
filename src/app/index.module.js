@@ -10,6 +10,7 @@
       'ngSanitize',
       'ui.router',
       'ui.bootstrap',
+      'ngStorage',
       'wwDashboard',
       'wwMenu'
     ]);

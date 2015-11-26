@@ -5,7 +5,7 @@
     .directive('wwaDashboard', wwaDashboard);
 
   /** @ngInject */
-  function wwaDashboard() {
+  function wwaDashboard($localStorage) {
     var directive = {
       scope: {
 
@@ -70,12 +70,21 @@
             }
           }
         ];
-        //this is the content for each widget
-        scope.widgets = [
-
-        ];
         scope.title = 'My Dashboard';
 
+        //this is the content for each widget added that we store locally using ngStorage
+        //first look at if local storage has the property, else use empty array
+        //is is where you would add defualt arrays of widgets
+        scope.widgets = $localStorage.widgets || [
+
+        ];
+
+        //put a watch on the widgets array - and when it changes call a function
+        scope.$watch('widgets', function () {
+          //use the $localstorage and set a widgets property on it
+          //added true to save ALL the values of the object
+          $localStorage.widgets = scope.widgets;
+        }, true);
       }
     };
     return directive;

@@ -15,13 +15,18 @@
 
   <!-- this info is based off of grabbing data from the service data object using getLocation(); in the directive -->
   <div class="ww-widget-body wwa-temperature-body" style="background-image: url(/assets/images/{{selectedLocation.image}});">
-    <div class="wwa-temperature-view">
+    <div class="widget-loader" ng-if="!isLoaded && !hasError"><i class="fa fa-refresh fa-2x fa-spin"></i></div>
+    <div class="wwa-temperature-view" ng-if="isLoaded">
       <div class="wwa-temperature-river-name">
         {{ selectedLocation.name }}
       </div>
       <div class="wwa-temperature-degrees">
         {{ selectedLocation.temperature }}º
       </div>
+    </div>
+    <div class="widget-error" ng-if="hasError">
+      <h4>Error loading widget</h4>
+      <button class="btn btn-primary" ng-click="loadLocation()">Reload</button>
     </div>
   </div>
 

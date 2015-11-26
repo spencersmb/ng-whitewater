@@ -126,12 +126,36 @@
 
     var getLocation = function(id){
 
+      //return $timeout(function () {
+      // for(var i = 0; i < locations.length; i++)
+      //    if( locations[i].id === id)
+      //      return locations[i];
+      //    return 'no match found';
+      //}, 300);
+
+      var deferred = $q.defer();
+
       return $timeout(function () {
-       for(var i = 0; i < locations.length; i++)
-          if( locations[i].id === id)
-            return locations[i];
-          return 'no match found';
-      }, 300);
+        //return employees;
+        var location={};
+
+        for(var i = 0; i < locations.length; i++)
+          if( locations[i].id === id){
+            location = locations[i];
+          }
+        function findLocation(){
+          return location;
+        }
+
+        if(location.name != 'null'){
+          deferred.resolve(findLocation());
+        }else{
+          deferred.reject(undefined);
+        }
+
+        return deferred.promise;
+
+      }, 500);
     };
 
     var getEmployees = function(){
@@ -161,7 +185,7 @@
           if( employees[i].id === id)
             return employees[i];
           return 'no match found';
-      }, 300);
+      }, 500);
     };
 
     //return block of methods with functions attached for global use

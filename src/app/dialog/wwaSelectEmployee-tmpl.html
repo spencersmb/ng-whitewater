@@ -1,7 +1,8 @@
 <div class="modal-header">
   <h3 class="modal-title">Select Employee</h3>
 </div>
-<div class="modal-body">
+<!-- directive fix for modal issue on mobile -->
+<div class="modal-body" stop-event="touchend">
   <h3>Name</h3>
   <!-- ng-options has the data stored in employees and we loop through it setting each item to employee and looking for the name on each item. ng-modal is two way -->
   <!-- the select dialog box automatically sets the name as the selectedLocation ng-model -->

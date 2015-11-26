@@ -15,16 +15,27 @@
     </div>
     <div class="ww-right-ctrls col-sm-6">
       <div>
-        <button class="btn btn-primary">Button 1</button>
-        <button class="btn btn-success">Button 2</button>
-        <button class="btn btn-warning">Button 3</button>
+        <ww-user-profile-small></ww-user-profile-small>
       </div>
     </div>
   </div>
 </div>
 
-<!-- allow for transclusion -->
-<ng-transclude></ng-transclude>
+<!-- show menu if vertical variable is true, switch if false, show on isMenuVisible variable -->
+<div class="wwMenu-wrapper vertical"
+     ng-class="
+      {
+        'vertical': isMenuVertical,
+        'horizontal': !isMenuVertical
+
+      }"
+     ng-show="isMenuVisible">
+  <ww-user-profile></ww-user-profile>
+
+  <!-- allow for transclusion -->
+  <ng-transclude></ng-transclude>
+</div>
+
 
 <!-- Super handy to have the vaibales available to us on scope here -->
 <div ui-view class="main-content" ng-class="{'menu-full-width': !isMenuVertical || !isMenuVisible }">

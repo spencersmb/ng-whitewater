@@ -13,7 +13,8 @@
     </div>
   </div>
   <div class="ww-widget-body wwa-employee-body">
-    <div class="wwa-employee-row">
+    <div class="widget-loader" ng-if="!isLoaded"><i class="fa fa-refresh fa-2x fa-spin"></i></div>
+    <div class="wwa-employee-row" ng-if="isLoaded">
       <div class="wwa-employee-name-area">
         <h4>EMPLOYEE NAME</h4>
         <p>{{selectedEmployee.name}}</p>

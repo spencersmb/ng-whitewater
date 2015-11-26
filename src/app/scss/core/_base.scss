@@ -7,3 +7,31 @@ body{
 .no-padding{
   padding:0;
 }
+
+.widget-loader{
+  position:absolute;
+  top:50%;
+  left:50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.wwa-inventory-body{
+  .widget-loader{
+    margin-top: 16px;
+  }
+}
+
+.widget-error{
+  position:absolute;
+  top:calc(50% - 16px);
+  left:50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
